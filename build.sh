@@ -15,8 +15,10 @@ if [[ -f "${SCRIPT_DIR}/.env" ]]; then
 fi
 
 
-ARCH=$(arch)""
-## ensure version is set
+## ensure version & arch are set
+if [ -z "${ARCH}" ]; then
+	ARCH=$(arch)""
+fi
 if [ -z "${VERSION}" ]; then
 	echo -ne "Please export or set VERSION variable\n"
 	exit 1
