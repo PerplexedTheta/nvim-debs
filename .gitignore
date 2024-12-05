@@ -1,0 +1,4 @@
+dist/*
+checkinstall-debug.*.tgz
+.env
+*.deb

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+## remove the binary
+rm -fv /usr/bin/nvim
+
+exit 0
