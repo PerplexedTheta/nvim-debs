@@ -1,0 +1,10 @@
+Package: neovim
+Priority: extra
+Section: checkinstall
+Installed-Size: xx
+Maintainer: hosting@ptfs-europe.com
+Architecture: ${ARCH}
+Version: ${VERSION}
+Provides: neovim
+Breaks: neovim-runtime
+Description: heavily refactored vim fork
