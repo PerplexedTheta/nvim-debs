@@ -46,6 +46,7 @@ checkinstall --install=no \
 	--pkgrelease=${EPOCH} \
 	--pkgarch=${ARCH} \
 	--maintainer="hosting@ptfs-europe.com" \
+	--conflicts="neovim-runtime" \
 	--review-control \
 	--strip=no \
 	--stripso=no \
