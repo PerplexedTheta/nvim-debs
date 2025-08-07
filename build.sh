@@ -25,9 +25,9 @@ if [ -z "${VERSION}" ]; then
 fi
 EPOCH=$(date +%s)""
 if [ "${ARCH}" == "amd64" ]; then
-    URL="https://github.com/neovim/neovim/releases/download/v${VERSION}/nvim-linux-x86_64.appimage"
+    URL="https://github.com/neovim/neovim/releases/download/v${VERSION}/nvim-linux-x86_64.tar.gz"
 elif [ "${ARCH}" == "arm64" ]; then
-    URL="https://github.com/neovim/neovim/releases/download/v${VERSION}/nvim-linux-arm64.appimage"
+    URL="https://github.com/neovim/neovim/releases/download/v${VERSION}/nvim-linux-arm64.tar.gz"
 else
     echo "CPU arch not supported!"
     exit 1

@@ -2,13 +2,13 @@ init:
 	mkdir -v -p dist/
 
 install:
-	wget --hsts-file /dev/null -O /tmp/nvim.appimage ${URL}
-	chmod +x /tmp/nvim.appimage
-	cd /tmp && /tmp/nvim.appimage --appimage-extract
-	rsync -av /tmp/squashfs-root/usr/ /usr
-	rm -fv /tmp/nvim.appimage
-	rm -rfv /tmp/squashfs-root/
+	wget --hsts-file /dev/null -O /tmp/nvim.tgz ${URL}
+	cd /tmp && mkdir ./nvim
+	cd /tmp/nvim && tar -xvf nvim.tgz
+	cp -rf /tmp/nvim/nvim-linux-*/bin/* /usr/bin/
+	cp -rf /tmp/nvim/nvim-linux-*/lib/* /usr/lib/
+	cp -rf /tmp/nvim/nvim-linux-*/share/* /usr/share/
+	rm -fv /tmp/nvim/
 
 clean:
-	rm -fv /tmp/nvim.appimage
-	rm -rfv /tmp/squashfs-root/
+	rm -fv /tmp/nvim
