@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+update-alternatives --install /usr/bin/editor editor /usr/local/bin/nvim 50
+
 exit 0
