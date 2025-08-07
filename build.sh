@@ -24,10 +24,19 @@ if [ -z "${VERSION}" ]; then
 	exit 1
 fi
 EPOCH=$(date +%s)""
+if [ "${ARCH}" == "amd64" ]; then
+    URL="https://github.com/neovim/neovim/releases/download/v${VERSION}/nvim-linux-x86_64.appimage"
+elif [ "${ARCH}" == "arm64" ]; then
+    URL="https://github.com/neovim/neovim/releases/download/v${VERSION}/nvim-linux-arm64.appimage"
+else
+    echo "CPU arch not supported!"
+    exit 1
+fi
 
 export ARCH="${ARCH}"
 export VERSION="${VERSION}"
 export EPOCH="${EPOCH}"
+export URL="${URL}"
 
 ## install deps
 apt update 2>/dev/null
