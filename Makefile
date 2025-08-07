@@ -2,13 +2,13 @@ init:
 	mkdir -v -p dist/
 
 install:
-	mkdir -pv /tmp/nvim
-	wget --hsts-file /dev/null -O /tmp/nvim.tgz ${URL}
-	ln -s /tmp/nvim.tgz /usr/nvim.tgz
-	cd /usr && tar -xvf nvim.tgz
-	rm -fv /usr/nvim.tgz
-	rm -fv /tmp/nvim.tgz
+	mkdir -pv /opt/nvim/{bin,lib,share}
+	wget --hsts-file /dev/null -O /opt/nvim.tgz ${URL}
+	cd /opt/nvim && tar -xvf nvim.tgz
+	rm -rf /opt/nvim/nvim.tgz
+	cp -rf /opt/nvim/nvim-linux-*/bin/* /opt/nvim/bin/
+	cp -rf /opt/nvim/nvim-linux-*/lib/* /opt/nvim/lib/
+	cp -rf /opt/nvim/nvim-linux-*/share/* /opt/nvim/share/
 
 clean:
-	rm -fv /usr/nvim.tgz
-	rm -fv /tmp/nvim.tgz
+	rm -rf /opt/nvim/nvim.tgz
