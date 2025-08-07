@@ -2,7 +2,7 @@ init:
 	mkdir -v -p dist/
 
 install:
-	wget --hsts-file /dev/null -O /tmp/nvim.appimage https://github.com/neovim/neovim/releases/download/v${VERSION}/nvim.appimage
+	wget --hsts-file /dev/null -O /tmp/nvim.appimage https://github.com/neovim/neovim/releases/download/v${VERSION}/nvim-linux-${ARCH}.appimage
 	chmod +x /tmp/nvim.appimage
 	cd /tmp && /tmp/nvim.appimage --appimage-extract
 	rsync -av /tmp/squashfs-root/usr/ /usr
